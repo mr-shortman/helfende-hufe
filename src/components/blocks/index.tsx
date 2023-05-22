@@ -7,9 +7,15 @@ interface Props {
 }
 interface SectionWrapperProps {
   children: JSX.Element;
+  id: string;
+  container: boolean;
 }
-const SectionWrapper = ({ children }: SectionWrapperProps) => {
-  return <section className="container py-10">{children}</section>;
+const SectionWrapper = ({ children, id, container }: SectionWrapperProps) => {
+  return (
+    <section className={`${container ? "container py-10" : ""}`} id={id}>
+      {children}
+    </section>
+  );
 };
 
 export const Blocks = (props: Props) => {
@@ -22,13 +28,21 @@ export const Blocks = (props: Props) => {
               case "PageBlocksHero":
                 return (
                   <React.Fragment key={i + block.__typename}>
-                    <Hero data={block} />
+                    <SectionWrapper
+                      id={block.id ?? `Hero-${i}`}
+                      container={false}
+                    >
+                      <Hero data={block} />
+                    </SectionWrapper>
                   </React.Fragment>
                 );
               case "PageBlocksContent":
                 return (
                   <React.Fragment key={i + block.__typename}>
-                    <SectionWrapper>
+                    <SectionWrapper
+                      id={block.id ?? `Content-${i}`}
+                      container={true}
+                    >
                       <Content data={block} />
                     </SectionWrapper>
                   </React.Fragment>
@@ -36,7 +50,10 @@ export const Blocks = (props: Props) => {
               case "PageBlocksEvent":
                 return (
                   <React.Fragment key={i + block.__typename}>
-                    <SectionWrapper>
+                    <SectionWrapper
+                      id={block.id ?? `Events-${i}`}
+                      container={true}
+                    >
                       <Event data={block} />
                     </SectionWrapper>
                   </React.Fragment>

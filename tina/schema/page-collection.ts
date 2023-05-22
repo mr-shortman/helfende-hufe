@@ -6,8 +6,8 @@ export const heroBlock: TinaTemplate = {
   label: "Hero",
   ui: {
     defaultItem: {
-      headline: "This Big Text is Totally Awesome",
-      tagline: "Here's some text above the other text",
+      headline: "Das ist eine Überschrift!",
+      description: "Das ist eine Beschreibung",
       cta: {
         link: "/",
         text: "CTA Button",
@@ -22,8 +22,8 @@ export const heroBlock: TinaTemplate = {
     },
     {
       type: "string",
-      label: "Tagline",
-      name: "tagline",
+      label: "Description",
+      name: "heroDescription",
     },
     {
       name: "cta",
@@ -43,9 +43,29 @@ export const heroBlock: TinaTemplate = {
       ],
     },
     {
-      name: "image",
-      label: "Hintergrundbild",
+      name: "bigImage",
+      label: "Big Image",
       type: "image",
+    },
+    {
+      name: "bigImagePosition",
+      label: "Big Image Position",
+      type: "string",
+    },
+    {
+      name: "smallImage",
+      label: "Small Image",
+      type: "image",
+    },
+    {
+      name: "smallImagePosition",
+      label: "Small Image Position",
+      type: "string",
+    },
+    {
+      name: "id",
+      label: "Element Id",
+      type: "string",
     },
   ],
 };
@@ -92,9 +112,19 @@ export const contentBlock: TinaTemplate = {
       type: "image",
     },
     {
+      name: "imagePosition",
+      label: "Image Position",
+      type: "string",
+    },
+    {
       name: "reverse",
       label: "umgekehrt",
       type: "boolean",
+    },
+    {
+      name: "id",
+      label: "Element Id",
+      type: "string",
     },
   ],
 };
@@ -145,7 +175,17 @@ const eventBlock: TinaTemplate = {
           label: "Bild",
           type: "image",
         },
+        {
+          name: "imagePosition",
+          label: "Image Position",
+          type: "string",
+        },
       ],
+    },
+    {
+      name: "id",
+      label: "Element Id",
+      type: "string",
     },
   ],
 };

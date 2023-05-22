@@ -4,6 +4,7 @@ import { Navbar, Footer } from ".";
 function PageLayout({ children }: LayoutProps) {
   return (
     <>
+      {/* @ts-expect-error */}
       <Navbar />
       {children}
       <Footer />

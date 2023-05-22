@@ -11,3 +11,18 @@ export const getTinaPage = async (relativePath: string) => {
     relativePath,
   });
 };
+
+export const getSiteConfig = async () => {
+  const req = await client.queries.siteConfig({
+    relativePath: "siteConfig.md",
+  });
+  console.log("req: ", req);
+  return req.data.siteConfig;
+};
+
+export const getSiteNavigator = async () => {
+  const req = await client.queries.siteConfig({
+    relativePath: "siteConfig.md",
+  });
+  return req.data.siteConfig.navigator;
+};

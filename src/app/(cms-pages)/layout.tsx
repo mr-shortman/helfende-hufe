@@ -4,7 +4,8 @@ import React from "react";
 function Layout({ children }: LayoutProps) {
   return (
     <>
-      <Navbar className="hero bg-transparent" />
+      {/* @ts-expect-error */}
+      <Navbar className=" bg-transparent" />
       {children}
       <Footer />
     </>

@@ -1,19 +1,23 @@
-"use client";
 import React from "react";
-import { siteConfig } from "@/config/site-config";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { Icons } from "@/components";
+import NavLink from "./nav-link";
+import { getSiteNavigator } from "@/lib/utils";
 
 interface NavbarProps {
   className?: string;
+  // siteConfig: SiteConfig;
 }
 
-function Navbar({ className }: NavbarProps) {
-  const pathname = usePathname();
+async function Navbar({ className }: NavbarProps) {
+  const navigator = await getSiteNavigator();
+
+  // console.log(siteConfig);
+
   return (
-    <div className={`bg-muted ${className}`}>
+    <div className={`relative z-20 bg-muted ${className}`}>
       <div className="flex justify-between items-center container py-4 ">
         <Link href={"/"} className="flex items-center gap-2">
           {/* <Icons.logo className="w-12 text-white" /> */}
@@ -21,35 +25,35 @@ function Navbar({ className }: NavbarProps) {
             Helfende Hufe e.V.
           </span>
         </Link>
-        <div className="flex gap-10 items-center">
-          <ul className="flex items-center gap-5">
-            {siteConfig.navigator.links.map(({ label, path }, idx) => (
-              <li key={idx}>
-                <Link
-                  href={path}
-                  className={`${
-                    pathname === path
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground/75"
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* <div className="flex gap-10 items-center"> */}
+        <ul className="flex items-center gap-5">
+          {navigator?.links &&
+            navigator?.links.map((link, idx) => {
+              // if (!link?.label || link?.path) return null;
+              return (
+                <li key={idx}>
+                  <NavLink label={`${link?.label}`} path={`${link?.path}`} />
+                </li>
+              );
+            })}
+        </ul>
 
-          <ul className="flex items-center gap-5">
-            {siteConfig.navigator.buttons?.map(({ label, path, icon }, idx) => (
-              <Button key={idx}>
-                <Link href={path} className="flex items-center gap-1">
-                  {icon && <Icons.heart />}
-                  <span>{label}</span>
-                </Link>
-              </Button>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex items-center gap-5">
+          {navigator?.buttons &&
+            navigator?.buttons.map((button, idx) => {
+              return (
+                <li key={idx}>
+                  <NavLink
+                    label={`${button?.label}`}
+                    path={`${button?.path}`}
+                    icon={`${button?.icon}`}
+                    isButton={true}
+                  />
+                </li>
+              );
+            })}
+        </ul>
+        {/* </div> */}
       </div>
     </div>
   );

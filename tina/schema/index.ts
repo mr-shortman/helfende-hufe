@@ -1,3 +1,3 @@
 import pageCollection from "./page-collection";
-
-export { pageCollection };
+import { siteConfig } from "./site-config";
+export { pageCollection, siteConfig };
