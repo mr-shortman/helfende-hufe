@@ -5,7 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { siteConfig } from "@/config/site-config";
 import { SectionWrapper } from "@/hoc";
 import { Icons } from "@/components/icons";
-import Image from "@/components/image";
+import ImageComponent from "@/components/image";
+import { tinaField } from "tinacms/dist/react";
+import { cn } from "@/lib/utils";
 
 interface Props {
   data: PageBlocksHero;
@@ -25,9 +27,16 @@ function Hero({ data }: Props) {
     <div className="flex  min-h-[740px] gap-5 mt-10 lg:px-20">
       {/* Hero Content */}
       <div className="w-full flex flex-col gap-5">
-        <div className=" flex flex-col justify-between  w-full h-full px-8 lg:py-28 bg-muted rounded-large gap-10">
+        <div
+          className={cn(
+            " flex flex-col justify-between  w-full h-full px-8 lg:py-28 bg-muted gap-10 rounded-xl rounded-tl-3xl"
+          )}
+        >
           <h1 className="font-black text-6xl w-full max-w-2xl">{headline}</h1>
-          <p className="text-muted-foreground text-xl w-full max-w-sm">
+          <p
+            className="text-muted-foreground text-xl w-full max-w-sm"
+            data-tina-field={tinaField(data, "heroDescription")}
+          >
             {heroDescription}
           </p>
         </div>
@@ -35,8 +44,8 @@ function Hero({ data }: Props) {
         {/* Buttons */}
         <div className="flex gap-5 h-52">
           {/* image */}
-          <div className="w-full rounded-large overflow-hidden bg-muted h-full">
-            <Image
+          <div className="w-full overflow-hidden bg-muted h-full rounded-xl rounded-bl-3xl">
+            <ImageComponent
               src={smallImage}
               imageRest={{
                 alt: "image-button",
@@ -48,8 +57,8 @@ function Hero({ data }: Props) {
             />
           </div>
           <button
-            className="h-full w-96 bg-primary rounded-large text-primary-foreground flex items-center justify-center 
-                      group hover:brightness-90 transition-all duration-300 "
+            className="h-full w-96 bg-primary text-primary-foreground flex items-center justify-center 
+                      group hover:brightness-90 transition-all duration-300 rounded-xl "
             onClick={() => {
               window.scrollTo({
                 top: window.innerHeight,
@@ -67,8 +76,8 @@ function Hero({ data }: Props) {
       </div>
 
       {/* Hero Image */}
-      <div className="w-full bg-muted overflow-hidden rounded-large ">
-        <Image
+      <div className="w-full bg-muted overflow-hidden rounded-xl rounded-r-3xl ">
+        <ImageComponent
           src={bigImage}
           containerRest={{
             className: "w-full h-full",

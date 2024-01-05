@@ -35,6 +35,12 @@ function Footer() {
             {siteConfig.siteName}
           </Link>
           . alle Rechte vorbehalten.
+          <Link
+            href="/impressum"
+            className="underline ml-2 hover:text-foreground/75"
+          >
+            Impressum
+          </Link>
         </span>
       </div>
     </footer>

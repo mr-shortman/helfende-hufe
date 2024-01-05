@@ -16,7 +16,7 @@ function Content({ data }: Props) {
     <div className="flex items-center  justify-between gap-10">
       <Image
         containerRest={{
-          className: `w-full max-w-2xl shadow-large rounded-large ${
+          className: `w-full max-w-2xl rounded-large ${
             reverse ? "order-last" : "order-first"
           }`,
         }}

@@ -7,16 +7,19 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getTinaPage = async (relativePath: string) => {
-  return await client.queries.page({
-    relativePath,
-  });
+  try {
+    return await client.queries.page({
+      relativePath,
+    });
+  } catch (e) {
+    return null;
+  }
 };
 
 export const getSiteConfig = async () => {
   const req = await client.queries.siteConfig({
     relativePath: "siteConfig.md",
   });
-  console.log("req: ", req);
   return req.data.siteConfig;
 };
 

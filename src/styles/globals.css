@@ -90,11 +90,18 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
-  .rounded-large {
+  /* .rounded-large {
     border-radius: 2.5rem;
-  }
+  } */
 
   .shadow-large {
     box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
   }
+}
+
+.__tina-quick-editing-enabled [data-tina-field] {
+  outline: 2px dashed rgba(254, 34, 56, 0.5);
+}
+.__tina-quick-editing-enabled [data-tina-field]:hover {
+  outline: 2px dashed rgba(254, 34, 56, 1);
 }

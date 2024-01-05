@@ -4,11 +4,7 @@ import { getTinaPage } from "@/lib/utils";
 import { notFound } from "next/navigation";
 
 export default async function Home({ params }: any) {
-  try {
-    const page = await getTinaPage(`${params.slug}.mdx`);
-
-    return <TinaPageWrapper page={page} />;
-  } catch (e) {
-    return notFound();
-  }
+  const page = await getTinaPage(`${params.slug}.mdx`);
+  if (!page) return notFound();
+  return <TinaPageWrapper page={page} />;
 }

@@ -6,7 +6,7 @@ import {
 } from "../../../../tina/__generated__/types";
 import RichText from "@/components/richtext";
 import Header from "@/components/header";
-import Image from "@/components/image";
+import ImageComponent from "@/components/image";
 
 interface Props {
   data: PageBlocksEvent;
@@ -20,7 +20,7 @@ const EventCard = ({
 }: PageBlocksEventEventList) => {
   return (
     <div className="shadow-lg w-full max-w-sm flex flex-col rounded-large bg-muted gap-4 justify-between">
-      <Image src={image} imageRest={{ alt: "", className: "rounded-md" }} />
+      <ImageComponent src={image} imageRest={{ className: "rounded-md" }} />
 
       <div className="flex flex-col p-8">
         <span className="text-sm text-muted-foreground">{date}</span>
@@ -42,7 +42,7 @@ function Event({ data }: Props) {
       </div>
 
       {/* EventList */}
-      <div className="flex flex-wrap gap-5">
+      <div className="w-full flex flex-wrap gap-4 lg:gap-10 ">
         {eventList?.map((event, idx) => (
           <EventCard {...event} key={idx} />
         ))}
