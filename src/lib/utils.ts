@@ -20,12 +20,12 @@ export const getSiteConfig = async () => {
   const req = await client.queries.siteConfig({
     relativePath: "siteConfig.md",
   });
-  return req.data.siteConfig;
+  return req.data.siteConfig as unknown as SiteConfig;
 };
 
 export const getSiteNavigator = async () => {
   const req = await client.queries.siteConfig({
     relativePath: "siteConfig.md",
   });
-  return req.data.siteConfig.navigator;
+  return req.data.siteConfig.navigator as unknown as SiteNavigator;
 };

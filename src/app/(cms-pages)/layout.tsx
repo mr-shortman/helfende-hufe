@@ -1,11 +1,13 @@
 import { Footer, Navbar, PageLayout } from "@/components/layout";
+import { getSiteConfig, getSiteNavigator } from "@/lib/utils";
 import React from "react";
 
-function Layout({ children }: LayoutProps) {
+async function Layout({ children }: LayoutProps) {
+  const siteConfig = await getSiteConfig();
+
   return (
     <>
-      {/* @ts-expect-error */}
-      <Navbar className=" bg-transparent" />
+      <Navbar className=" bg-transparent" siteConfig={siteConfig} />
       {children}
       <Footer />
     </>

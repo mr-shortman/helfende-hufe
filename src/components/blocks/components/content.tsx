@@ -4,7 +4,7 @@ import RichText from "@/components/richtext";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "@/components/image";
+import ImageComponent from "@/components/image";
 
 interface Props {
   data: PageBlocksContent;
@@ -13,8 +13,8 @@ interface Props {
 function Content({ data }: Props) {
   const { title, image, description, label, cta, reverse } = data;
   return (
-    <div className="flex items-center  justify-between gap-10">
-      <Image
+    <div className="flex flex-col lg:flex-row lg:items-center  justify-between gap-10">
+      <ImageComponent
         containerRest={{
           className: `w-full max-w-2xl rounded-large ${
             reverse ? "order-last" : "order-first"

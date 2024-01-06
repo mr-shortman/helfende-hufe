@@ -4,13 +4,15 @@ type NavLink = {
   icon?: string;
 };
 
+type SiteNavigator = {
+  links: NavLink[];
+  buttons?: NavLink[];
+};
+
 interface SiteConfig {
   siteName: string;
   logoUrl: stirng;
-  navigator: {
-    links: NavLink[];
-    buttons?: NavLink[];
-  };
+  navigator: SiteNavigator;
 }
 
 interface LayoutProps {

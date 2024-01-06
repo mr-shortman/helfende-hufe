@@ -24,12 +24,12 @@ function Hero({ data }: Props) {
   } = data;
 
   return (
-    <div className="flex  min-h-[740px] gap-5 mt-10 lg:px-20">
+    <div className="flex flex-col lg:flex-row px-4  min-h-[740px] gap-5 mt-10 lg:px-20">
       {/* Hero Content */}
       <div className="w-full flex flex-col gap-5">
         <div
           className={cn(
-            " flex flex-col justify-between  w-full h-full px-8 lg:py-28 bg-muted gap-10 rounded-xl rounded-tl-3xl"
+            " flex flex-col justify-between  w-full h-full p-4  lg:py-28 bg-muted gap-10 rounded-xl rounded-tl-3xl"
           )}
         >
           <h1 className="font-black text-6xl w-full max-w-2xl">{headline}</h1>
@@ -42,8 +42,7 @@ function Hero({ data }: Props) {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-5 h-52">
-          {/* image */}
+        <div className="flex flex-col md:flex-row  gap-5 h-full">
           <div className="w-full overflow-hidden bg-muted h-full rounded-xl rounded-bl-3xl">
             <ImageComponent
               src={smallImage}
@@ -56,8 +55,8 @@ function Hero({ data }: Props) {
               }}
             />
           </div>
-          <button
-            className="h-full w-96 bg-primary text-primary-foreground flex items-center justify-center 
+          <Button
+            className="w-full h-68   bg-primary text-primary-foreground flex items-center justify-center 
                       group hover:brightness-90 transition-all duration-300 rounded-xl "
             onClick={() => {
               window.scrollTo({
@@ -71,7 +70,7 @@ function Hero({ data }: Props) {
               height={150}
               className="rotate-45 group-hover:scale-90 transition-all duration-300"
             />
-          </button>
+          </Button>
         </div>
       </div>
 

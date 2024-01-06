@@ -24,6 +24,7 @@ import {
   User,
   X,
   Heart,
+  Menu,
   type Icon as LucideIcon,
 } from "lucide-react";
 
@@ -45,6 +46,7 @@ export const Icons = {
   moon: Moon,
   check: Check,
   heart: Heart,
+  menu: Menu,
   logo: ({ ...props }: LucideProps) => (
     <svg
       viewBox="0 0 89 95"
