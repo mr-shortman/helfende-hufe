@@ -13,6 +13,7 @@ interface SiteConfig {
   siteName: string;
   logoUrl: stirng;
   navigator: SiteNavigator;
+  initialPath?: string;
 }
 
 interface LayoutProps {
