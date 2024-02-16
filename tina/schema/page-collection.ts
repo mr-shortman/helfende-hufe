@@ -107,6 +107,23 @@ export const contentBlock: TinaTemplate = {
       ],
     },
     {
+      name: "cta2",
+      label: "Call To Action 2",
+      type: "object",
+      fields: [
+        {
+          name: "link",
+          label: "Link",
+          type: "string",
+        },
+        {
+          name: "text",
+          label: "Text",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "image",
       label: "Bild",
       type: "image",

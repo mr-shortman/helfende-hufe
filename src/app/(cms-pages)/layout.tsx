@@ -1,5 +1,5 @@
-import { Footer, Navbar, PageLayout } from "@/components/layout";
-import { getSiteConfig, getSiteNavigator } from "@/lib/utils";
+import { Footer, Navbar } from "@/components/layout";
+import { getSiteConfig } from "@/lib/utils";
 import React from "react";
 
 async function Layout({ children }: LayoutProps) {
@@ -7,9 +7,9 @@ async function Layout({ children }: LayoutProps) {
 
   return (
     <>
-      <Navbar className=" bg-transparent" siteConfig={siteConfig} />
+      <Navbar className="bg-transparent" siteConfig={siteConfig} />
       {children}
-      <Footer />
+      <Footer className="mt-20" />
     </>
   );
 }

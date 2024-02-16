@@ -21,17 +21,18 @@ interface NavbarProps {
 }
 
 function Navbar({ className, siteConfig }: NavbarProps) {
-  // const [open, setOpen] = React.useState(false);
-
   const siteNavigator = siteConfig.navigator;
 
   return (
     <div className={cn(`relative z-20 bg-muted`, className)}>
-      <div className="flex justify-between items-center container py-4 ">
-        <Link href={"/"} className="flex items-center gap-2">
-          <span className="text-3xl font-bold text-muted-foreground">
-            {siteConfig.siteName}
-          </span>
+      <div className="w-full flex justify-between items-center py-4 px-4 lg:px-20">
+        <Link href={"/"} className="  ">
+          <Button variant={"ghost"} className=" gap-2 w-full max-w-md">
+            <Icons.logo className="h-10" />
+            <span className="text-3xl font-bold text-muted-foreground">
+              {siteConfig.siteName}
+            </span>
+          </Button>
         </Link>
 
         <Sheet>

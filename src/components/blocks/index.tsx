@@ -12,7 +12,7 @@ interface SectionWrapperProps {
 }
 const SectionWrapper = ({ children, id, container }: SectionWrapperProps) => {
   return (
-    <section className={`${container ? "container py-10" : ""}`} id={id}>
+    <section className={`${container ? "container " : ""}`} id={id}>
       {children}
     </section>
   );
