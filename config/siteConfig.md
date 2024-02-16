@@ -5,10 +5,10 @@ logoUrl: >-
 initialPath: start
 navigator:
   links:
-    - label: Tierschutz
-      path: /tierschutz
     - label: Start
       path: /start
+    - label: Tierschutz
+      path: /tierschutz
     - label: Vorstand
       path: /vorstand
     - label: Kontakt
