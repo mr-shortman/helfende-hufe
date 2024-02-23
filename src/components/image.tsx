@@ -26,10 +26,11 @@ function ImageComponent({ src, imageRest, containerRest }: ImageProps) {
           <Image
             alt=""
             src={src}
-            {...imageDefault}
-            {...imageRest}
             width={1080}
             height={720}
+            {...imageDefault}
+            {...imageRest}
+            unoptimized
           />
         )}
       </div>
