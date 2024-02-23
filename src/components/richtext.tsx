@@ -7,7 +7,7 @@ interface RichTextProps {
 }
 
 function RichText({ content, className }: RichTextProps) {
-  return <TinaMarkdown content={content} />;
+  return <TinaMarkdown content={content} className="tina-markdown" />;
 }
 
 export default RichText;
