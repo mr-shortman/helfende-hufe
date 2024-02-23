@@ -1,5 +1,5 @@
 @import url("./fonts.css");
-
+@import url("./tina-md.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
