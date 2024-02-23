@@ -11,8 +11,8 @@ navigator:
       path: /tierschutz
     - label: Vorstand
       path: /vorstand
-    - label: Kontakt
-      path: /kontakt
+    - label: Mitglied
+      path: /mitglied
     - label: Events
       path: '#events'
   buttons:
