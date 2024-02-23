@@ -22,4 +22,7 @@ export default defineConfig({
     // @ts-expect-error
     collections: [pageCollection, siteConfig],
   },
+  
 });
+
+#refresh
