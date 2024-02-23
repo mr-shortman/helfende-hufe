@@ -13,8 +13,8 @@ navigator:
       path: /vorstand
     - label: Mitglied
       path: /mitglied
-    - label: Events
-      path: '#events'
+    - label: Neuigkeiten
+      path: /neuigkeiten
   buttons:
     - label: Spenden
       path: /spenden
