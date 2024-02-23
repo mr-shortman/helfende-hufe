@@ -47,6 +47,7 @@ function ImageComponent({ src, imageRest, containerRest }: ImageProps) {
               {...imageDefault}
               {...imageRest}
               className="object-contain rounded-large"
+              unoptimized
             />
           )}
         </div>
