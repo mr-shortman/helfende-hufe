@@ -207,6 +207,18 @@ const eventBlock: TinaTemplate = {
   ],
 };
 
+const markdownBlock: TinaTemplate = {
+  name: "markdown",
+  label: "Markdown",
+  fields: [
+    {
+      name: "content",
+      label: "Content",
+      type: "rich-text",
+    },
+  ],
+};
+
 const pageCollection = {
   name: "page",
   label: "Seiten",
@@ -238,7 +250,7 @@ const pageCollection = {
       label: "Sections",
       type: "object",
       list: true,
-      templates: [heroBlock, contentBlock, eventBlock],
+      templates: [heroBlock, contentBlock, eventBlock, markdownBlock],
     },
   ],
 };
