@@ -17,21 +17,10 @@ function Content({ data }: Props) {
   const { title, image, description, label, cta, reverse, cta2 } = data;
 
   return (
-    // <div className="flex flex-col lg:flex-row lg:items-center  justify-between gap-10">
-    //   <div className="flex flex-col gap-3 w-full ">
-    //     <Badge>{label}</Badge>
-    //     <h3 className="text-4xl font-bold">{title}</h3>
-    //     {cta && (
-    //       <Button variant={"outline"}>
-    //         <Link href={`${cta.link}`}>{cta.text}</Link>
-    //       </Button>
-    //     )}
-    //   </div>
-    // </div>
     <div className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-0 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]">
-          <div data-tina-field={tinaField(data, "cta")}>
+          <div data-tina-field={tinaField(data, "image")}>
             <ImageComponent
               containerRest={{
                 className: cn(
