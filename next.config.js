@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: ["assets.tina.io"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

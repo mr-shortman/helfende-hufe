@@ -8,17 +8,23 @@ import RichText from "@/components/richtext";
 import Header from "@/components/header";
 import ImageComponent from "@/components/image";
 import { tinaField } from "tinacms/dist/react";
+import { cn } from "@/lib/utils";
 
 interface Props {
   data: PageBlocksEvent;
 }
 
 const EventCard = (props: PageBlocksEventEventList) => {
-  const { image, title, description, date } = props;
+  const { image, title, description, date, imagePosition } = props;
   return (
     <div className="shadow-lg w-full max-w-sm flex flex-col rounded-large bg-muted gap-4 justify-between">
       <div data-tina-field={tinaField(props, "image")}>
-        <ImageComponent src={image} imageRest={{ className: "rounded-md" }} />
+        <ImageComponent
+          src={image}
+          imageRest={{
+            className: cn("rounded-md h-96 object-cover", imagePosition),
+          }}
+        />
       </div>
 
       <div className="flex flex-col p-8">

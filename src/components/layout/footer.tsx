@@ -49,6 +49,12 @@ function Footer({ className }: Props) {
           >
             Impressum
           </Link>
+          <Link
+            href="/datenschutz"
+            className="underline ml-2 hover:text-foreground/75"
+          >
+            Datenschutz
+          </Link>
         </span>
       </div>
     </footer>

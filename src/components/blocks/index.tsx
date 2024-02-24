@@ -34,7 +34,7 @@ const getBlockComponent = (
 
 export const Blocks = (props: Props) => {
   return (
-    <div className="w-full flex flex-col gap-20">
+    <div className="w-full flex flex-col gap-10">
       {props.blocks.length
         ? props.blocks.map((blockData, idx) => {
             const block =

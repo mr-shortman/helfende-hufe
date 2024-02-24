@@ -2,10 +2,8 @@ import React from "react";
 import { PageBlocksContent } from "../../../../tina/__generated__/types";
 import RichText from "@/components/richtext";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ImageComponent from "@/components/image";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { tinaField } from "tinacms/dist/react";
 
@@ -14,18 +12,32 @@ interface Props {
 }
 
 function Content({ data }: Props) {
-  const { title, image, description, label, cta, reverse, cta2 } = data;
+  const {
+    title,
+    image,
+    imagePosition,
+    description,
+    label,
+    cta,
+    reverse,
+    cta2,
+  } = data;
 
   return (
     <div className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-0 md:px-6">
         <div className="grid gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]">
-          <div data-tina-field={tinaField(data, "image")}>
+          <div
+            className={reverse ? "order-last" : "order-first"}
+            data-tina-field={tinaField(data, "image")}
+          >
             <ImageComponent
               containerRest={{
                 className: cn(
-                  "border-2 mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full",
-                  reverse ? "order-last" : "order-first"
+                  cn(
+                    "border-2 mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full",
+                    imagePosition
+                  )
                 ),
               }}
               src={`${image}`}
@@ -36,12 +48,14 @@ function Content({ data }: Props) {
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <Badge
-                variant={"outline"}
-                data-tina-field={tinaField(data, "label")}
-              >
-                {label}
-              </Badge>
+              {label && (
+                <Badge
+                  variant={"outline"}
+                  data-tina-field={tinaField(data, "label")}
+                >
+                  {label}
+                </Badge>
+              )}
               <h2
                 className="text-3xl font-bold tracking-tighter sm:text-5xl"
                 data-tina-field={tinaField(data, "title")}
