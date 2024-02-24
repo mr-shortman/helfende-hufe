@@ -15,3 +15,6 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 The CMS can be accessed through the /admin page on the website. 
+
+
+Made with <3 by SHRT
