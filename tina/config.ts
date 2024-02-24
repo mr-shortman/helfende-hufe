@@ -1,7 +1,7 @@
 import { defineConfig } from "tinacms";
 import { pageCollection, siteConfig } from "./schema";
 
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "prod";
 
 export default defineConfig({
   branch,
